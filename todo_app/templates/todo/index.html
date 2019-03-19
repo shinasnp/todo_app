@@ -1,0 +1,28 @@
+{% extends 'todo/base.html' %}
+{% block body %}
+<form class="form-inline">
+    {% csrf_token %}
+    <div >
+        <label>Title</label>
+        <input type="text" id="title" class="form-control" style="width:30%;" required="required"/>
+        <label>Description</label>
+        <input type="text" id="description" class="form-control" style="width:30%;" required="required"/>
+    </div>
+    <br>
+    <div>
+        <label>Status</label>
+        <select id="status" class="status" name="status" required="required">
+                    <option class="disabled" value="">Select Status</option>
+                    {% for status in all_status %}
+                        <option class="" value="{{ status }}" name="{{ status }}">{{ status }}</option>
+                    {% endfor %}
+                    </select>
+        <label>Task Date</label>
+        <input type="datetime-local" id="task_date" class="task_date" style="width:30%;" required="required"/>
+        <button type="button" id="create" class="btn btn-sm btn-primary">Create</button>
+    </div>
+</form>
+<br />
+<div id="result">
+</div>
+{% endblock %}

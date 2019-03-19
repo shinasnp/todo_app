@@ -1,0 +1,31 @@
+{% extends 'todo/base.html' %}
+{% block body %}
+    <form>
+        {% csrf_token %}
+        <input type="hidden" id="todo_id" value="{{ todo.id }}"/>
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" id="title" value="{{ todo.title }}" required="required"/>
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <input type="text" id="description" value="{{ todo.description }}" required="required"/>
+        </div>
+        <div class="form-group">
+            <label>Status</label>
+        <select id="status" class="status" name="status" required="required">
+                    <option class="disabled" value="">Select Status</option>
+                    {% for status in all_status %}
+                        <option class="" value="{{ status }}" name="{{ status }}" {% if status == todo.status %}selected{% endif %}>{{ status }}</option>
+                    {% endfor %}
+                    </select>
+        </div>
+        <div class="form-group">
+            <label>Task Date</label>
+            <input type="datetime-local" id="task_date" class="task_date" value = "{{parsed_date}}"style="width:30%;" required="required"/>
+        </div>
+        <div class="form-group">
+            <button type="button" id="update" class="btn btn-sm btn-warning">Update</button>
+        </div>
+    </form>
+{% endblock %}
