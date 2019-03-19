@@ -31,3 +31,7 @@ pip3 install -r requirement.txt
 ```
 python manage.py runserver
 ```
+### For creating admin user
+```
+python manage.py createsuperuser
+```
