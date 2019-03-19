@@ -1,5 +1,5 @@
 # todo_app
-A simple Django Todo App
+A simple Django Todo App and admin user can search,filter,download bulk entries in csv format
 ## Installation
 
 Create a project directory
