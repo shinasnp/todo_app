@@ -27,7 +27,7 @@ source env/bin/activate
 cd todo_app
 pip3 install -r requirement.txt
 ```
-### Start Api
+### Start server
 ```
 python manage.py runserver
 ```
