@@ -27,6 +27,12 @@ source env/bin/activate
 cd todo_app
 pip3 install -r requirement.txt
 ```
+### run migrations
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
 ### Start server
 ```
 python manage.py runserver
