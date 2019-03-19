@@ -37,3 +37,7 @@ python manage.py migrate
 ```
 python manage.py runserver
 ```
+### For create Admin user
+```
+python manage.py createsuperuser
+```
